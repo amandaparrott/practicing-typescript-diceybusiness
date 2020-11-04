@@ -1,29 +1,29 @@
 document.addEventListener("DOMContentLoaded", function () {
-    let d4Button = document.getElementById('d4');
-    let d6Button = document.getElementById("d6");
-    let d8Button = document.getElementById('d8');
-    let d10Button = document.getElementById('d10');
-    let d12Button = document.getElementById('d12');
-    let d20Button = document.getElementById('d20');
-    let reRollButton = document.getElementById("reRoll");
-    let dieSumButton = document.getElementById("dieSum");
-    let resetButton = document.getElementById("reset-button");
-    let diceContainer = document.getElementById("diceContainer");
+    let d4Button = <HTMLDivElement> document.getElementById('d4');
+    let d6Button = <HTMLDivElement> document.getElementById("d6");
+    let d8Button = <HTMLDivElement> document.getElementById('d8');
+    let d10Button = <HTMLButtonElement> document.getElementById('d10');
+    let d12Button = <HTMLButtonElement> document.getElementById('d12');
+    let d20Button = <HTMLButtonElement> document.getElementById('d20');
+    let reRollButton = <HTMLButtonElement> document.getElementById("reRoll");
+    let dieSumButton = <HTMLButtonElement> document.getElementById("dieSum");
+    let resetButton = <HTMLButtonElement> document.getElementById("reset-button");
+    let diceContainer = <HTMLDivElement> document.getElementById("diceContainer");
     
     let getRandomValue = (min: number, max: number) =>
         Math.floor(Math.random() * (max - min) + min);
-    let diceArray: any[] = [];
+    let diceArray: Die[] = [];
 
     class Die {
         value: number;
-        div: any;
+        div: HTMLDivElement;
         constructor(value: number) {
             this.value = value;
 
         }
         roll() {
             this.value = getRandomValue(1, 5);
-            this.div.innerText = this.value;
+            this.div.innerText = this.value.toString();
         }
         deleteDie() {
             this.div.remove();
@@ -32,66 +32,74 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
     class D4 extends Die {
+        div: HTMLDivElement;
+        value: number;
         constructor(value: number) {
             super(value);
             this.div = document.createElement("div");
             this.div.addEventListener('click', () => this.roll());
             this.div.addEventListener('dblclick', () => this.deleteDie());
             this.div.className = "d4-roll";
-            this.div.innerText = this.value;
+            this.div.innerText = this.value.toString();
             diceContainer.appendChild(this.div);
             this.div.style.color = "black";
         }
     };
 
     class D6 extends Die {
+        div: HTMLDivElement;
+        value: number;
         constructor(value: number) {
             super(value);
             this.div = document.createElement("div");
             this.div.addEventListener('click', () => this.roll());
             this.div.addEventListener('dblclick', () => this.deleteDie());
             this.div.className = "d6-roll";
-            this.div.innerText = this.value;
+            this.div.innerText = this.value.toString();
             diceContainer.appendChild(this.div);
             this.div.style.color = "black";
         }
         roll() {
             this.value = getRandomValue(1, 7);
-            this.div.innerText = this.value;
+            this.div.innerText = this.value.toString();
         }
     }
 
     class D8 extends Die {
+        div: HTMLDivElement;
+        value: number;
         constructor(value: number) {
             super(value);
             this.div = document.createElement("div");
             this.div.addEventListener('click', () => this.roll());
             this.div.addEventListener('dblclick', () => this.deleteDie());
             this.div.className = "d8-roll";
-            this.div.innerText = this.value;
+            this.div.innerText = this.value.toString();
             diceContainer.appendChild(this.div);
             this.div.style.color = "black";
         }
         roll() {
             this.value = getRandomValue(1, 9);
-            this.div.innerText = this.value;
+            this.div.innerText = this.value.toString();
         }
     }
 
     class D10 extends Die {
+        div: HTMLDivElement;
+        value: number;
         constructor(value: number) {
             super(value);
             this.div = document.createElement("div");
             this.div.addEventListener('click', () => this.roll());
             this.div.addEventListener('dblclick', () => this.deleteDie());
             this.div.className = "d10-roll";
-            this.div.innerText = this.value;
+            this.div.innerText = this.value.toString();
             diceContainer.appendChild(this.div);
             this.div.style.color = "black";
         }
         roll() {
             this.value = getRandomValue(1, 11);
-            this.div.innerText = this.value;
+            this.div.innerText = this.value.toString();
         }
     }
     class D12 extends Die {
@@ -101,29 +109,31 @@ document.addEventListener("DOMContentLoaded", function () {
             this.div.addEventListener('click', () => this.roll());
             this.div.addEventListener('dblclick', () => this.deleteDie());
             this.div.className = "d12-roll";
-            this.div.innerText = this.value;
+            this.div.innerText = this.value.toString();
             diceContainer.appendChild(this.div);
             this.div.style.color = "black";
         }
         roll() {
             this.value = getRandomValue(1, 13);
-            this.div.innerText = this.value;
+            this.div.innerText = this.value.toString();
         }
     }
     class D20 extends Die {
+        div: HTMLDivElement;
+        value: number;
         constructor(value: number) {
             super(value);
             this.div = document.createElement("div");
             this.div.addEventListener('click', () => this.roll());
             this.div.addEventListener('dblclick', () => this.deleteDie());
             this.div.className = "d20-roll";
-            this.div.innerText = this.value;
+            this.div.innerText = this.value.toString();
             diceContainer.appendChild(this.div);
             this.div.style.color = "black";
         }
         roll() {
             this.value = getRandomValue(1, 21);
-            this.div.innerText = this.value;
+            this.div.innerText = this.value.toString();
         }
     }
 

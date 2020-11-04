@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
         Die.prototype.roll = function () {
             this.value = getRandomValue(1, 5);
-            this.div.innerText = this.value;
+            this.div.innerText = this.value.toString();
         };
         Die.prototype.deleteDie = function () {
             this.div.remove();
@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", function () {
             _this.div.addEventListener('click', function () { return _this.roll(); });
             _this.div.addEventListener('dblclick', function () { return _this.deleteDie(); });
             _this.div.className = "d4-roll";
-            _this.div.innerText = _this.value;
+            _this.div.innerText = _this.value.toString();
             diceContainer.appendChild(_this.div);
             _this.div.style.color = "black";
             return _this;
@@ -65,14 +65,14 @@ document.addEventListener("DOMContentLoaded", function () {
             _this.div.addEventListener('click', function () { return _this.roll(); });
             _this.div.addEventListener('dblclick', function () { return _this.deleteDie(); });
             _this.div.className = "d6-roll";
-            _this.div.innerText = _this.value;
+            _this.div.innerText = _this.value.toString();
             diceContainer.appendChild(_this.div);
             _this.div.style.color = "black";
             return _this;
         }
         D6.prototype.roll = function () {
             this.value = getRandomValue(1, 7);
-            this.div.innerText = this.value;
+            this.div.innerText = this.value.toString();
         };
         return D6;
     }(Die));
@@ -84,14 +84,14 @@ document.addEventListener("DOMContentLoaded", function () {
             _this.div.addEventListener('click', function () { return _this.roll(); });
             _this.div.addEventListener('dblclick', function () { return _this.deleteDie(); });
             _this.div.className = "d8-roll";
-            _this.div.innerText = _this.value;
+            _this.div.innerText = _this.value.toString();
             diceContainer.appendChild(_this.div);
             _this.div.style.color = "black";
             return _this;
         }
         D8.prototype.roll = function () {
             this.value = getRandomValue(1, 9);
-            this.div.innerText = this.value;
+            this.div.innerText = this.value.toString();
         };
         return D8;
     }(Die));
@@ -103,14 +103,14 @@ document.addEventListener("DOMContentLoaded", function () {
             _this.div.addEventListener('click', function () { return _this.roll(); });
             _this.div.addEventListener('dblclick', function () { return _this.deleteDie(); });
             _this.div.className = "d10-roll";
-            _this.div.innerText = _this.value;
+            _this.div.innerText = _this.value.toString();
             diceContainer.appendChild(_this.div);
             _this.div.style.color = "black";
             return _this;
         }
         D10.prototype.roll = function () {
             this.value = getRandomValue(1, 11);
-            this.div.innerText = this.value;
+            this.div.innerText = this.value.toString();
         };
         return D10;
     }(Die));
@@ -122,14 +122,14 @@ document.addEventListener("DOMContentLoaded", function () {
             _this.div.addEventListener('click', function () { return _this.roll(); });
             _this.div.addEventListener('dblclick', function () { return _this.deleteDie(); });
             _this.div.className = "d12-roll";
-            _this.div.innerText = _this.value;
+            _this.div.innerText = _this.value.toString();
             diceContainer.appendChild(_this.div);
             _this.div.style.color = "black";
             return _this;
         }
         D12.prototype.roll = function () {
             this.value = getRandomValue(1, 13);
-            this.div.innerText = this.value;
+            this.div.innerText = this.value.toString();
         };
         return D12;
     }(Die));
@@ -141,14 +141,14 @@ document.addEventListener("DOMContentLoaded", function () {
             _this.div.addEventListener('click', function () { return _this.roll(); });
             _this.div.addEventListener('dblclick', function () { return _this.deleteDie(); });
             _this.div.className = "d20-roll";
-            _this.div.innerText = _this.value;
+            _this.div.innerText = _this.value.toString();
             diceContainer.appendChild(_this.div);
             _this.div.style.color = "black";
             return _this;
         }
         D20.prototype.roll = function () {
             this.value = getRandomValue(1, 21);
-            this.div.innerText = this.value;
+            this.div.innerText = this.value.toString();
         };
         return D20;
     }(Die));
